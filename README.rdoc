@@ -2,8 +2,9 @@
 
 A simple wrapper to allow inline queueing of arbitrary methods to Resque, e.g.:
 
-MyClass.delay(:queue => :bigjobs).some_class_method
-my_instance.delay(:queue => :jobsworth).some_instance_method
+  MyClass.delay(:queue => :bigjobs).some_class_method
+
+  my_instance.delay(:queue => :jobsworth).some_instance_method
 
 == Contributing to wresque_wrapper
  
