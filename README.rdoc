@@ -1,6 +1,9 @@
 = wresque_wrapper
 
-Description goes here.
+A simple wrapper to allow inline queueing of arbitrary methods to Resque, e.g.:
+
+MyClass.delay(:queue => :bigjobs).some_class_method
+my_instance.delay(:queue => :jobsworth).some_instance_method
 
 == Contributing to wresque_wrapper
  
@@ -14,6 +17,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Simon Coffey. See LICENSE.txt for
+Copyright (c) 2011 Tribesports Ltd. See LICENSE.txt for
 further details.
 
