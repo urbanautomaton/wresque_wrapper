@@ -52,7 +52,7 @@ module WresqueWrapper
 
       def method_missing(method,*args)
         if @target.respond_to?(method)
-          Resque.enqueue(@target,@target_id,method,*args)
+          Resque.enqueue(@klass,@target_id,method,*args)
         else
           @target.send(method,*args)
         end
