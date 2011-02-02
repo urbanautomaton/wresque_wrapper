@@ -16,15 +16,9 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/simon@urbanautomaton.com/wresque_wrapper"
   gem.license = "MIT"
   gem.summary = %Q{Async-style queueing of class methods using Resque}
-  gem.description = %Q{Allows queueing of model methods, e.g. MyModel.delay.some_method}
+  gem.description = %Q{Allows inline queueing of model methods to Resque, e.g. MyModel.delay.some_method, or some_instance.delay(:queue => :bigjobs).another_method}
   gem.email = "simon@tribesports.com"
   gem.authors = ["Simon Coffey"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
-  gem.add_runtime_dependency 'resque', '~> 1.10.0'
-  gem.add_runtime_dependency 'rails', '>= 2.1.0'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

@@ -2,9 +2,21 @@
 
 A simple wrapper to allow inline queueing of arbitrary methods to Resque, e.g.:
 
-  MyClass.delay(:queue => :bigjobs).some_class_method
+  MyClass.delay(:queue => :big_jobs).some_class_method
 
   my_instance.delay(:queue => :jobsworth).some_instance_method
+
+It shares the limitations of Resque with respect to queueable tasks; only methods whose arguments can be serialized as JSON objects can be queued.
+
+== Usage
+
+Any class derived from ActiveRecord::Base can use the delay method, optionally specifying a queue. Models can also specify a default queue using the #default_worker_queue class method:
+
+  class MyModel < ActiveRecord::Base
+    default_worker_queue :big_jobs
+  end
+
+If a default queue is not specified for a class, then the queue must be given in any delay call made with that class or instances thereof.
 
 == Contributing to wresque_wrapper
  
