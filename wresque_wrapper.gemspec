@@ -27,7 +27,8 @@ Gem::Specification.new do |s|
     "init.rb",
     "lib/wresque_wrapper.rb",
     "spec/spec_helper.rb",
-    "spec/wresque_wrapper_spec.rb"
+    "spec/wresque_wrapper_spec.rb",
+    "wresque_wrapper.gemspec"
   ]
   s.homepage = %q{http://github.com/simon@urbanautomaton.com/wresque_wrapper}
   s.licenses = ["MIT"]
