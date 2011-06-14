@@ -9,15 +9,19 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
+task :default => :spec
+
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "wresque_wrapper"
-  gem.homepage = "http://github.com/simon@urbanautomaton.com/wresque_wrapper"
+  gem.homepage = "http://github.com/urbanautomaton/wresque_wrapper"
   gem.license = "MIT"
   gem.summary = %Q{Async-style queueing of class methods using Resque}
   gem.description = %Q{Allows inline queueing of model methods to Resque, e.g. MyModel.delay.some_method, or some_instance.delay(:queue => :bigjobs).another_method}
-  gem.email = "simon@tribesports.com"
+  gem.email = "simon@urbanautomaton.com"
   gem.authors = ["Simon Coffey"]
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -35,8 +39,6 @@ Rcov::RcovTask.new do |test|
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
 end
-
-task :default => :test
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
