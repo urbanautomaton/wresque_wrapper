@@ -25,3 +25,4 @@ coverage.data
 coverage/index.html
 coverage
 pkg
+Gemfile.lock
